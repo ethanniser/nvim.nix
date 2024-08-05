@@ -77,6 +77,8 @@ with final.pkgs.lib; let
     # Color Schemes
     tokyonight-nvim
 
+    # Misc
+    mini-nvim
     nvim-unception # Prevent nested neovim sessions | nvim-unception
     # ^ Useful utilities
 
