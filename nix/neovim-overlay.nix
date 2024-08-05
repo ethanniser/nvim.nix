@@ -86,11 +86,7 @@ with final.pkgs.lib; let
     conform-nvim
   ];
 
-  extraPackages = with pkgs; [
-    # language servers, etc.
-    lua-language-server
-    nil # nix LSP
-  ];
+  extraPackages = with pkgs; [];
 in {
   # This is the neovim derivation
   # returned by the overlay
