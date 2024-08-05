@@ -1,9 +1,5 @@
-vim.bo.comments = ':---,:--'
-
-local lua_ls_cmd = 'lua-language-server'
-
 -- Check if lua-language-server is available
-if vim.fn.executable(lua_ls_cmd) ~= 1 then
+if vim.fn.executable('lua-language-server') ~= 1 then
   vim.notify("Language server for 'lua' - `lua-language-server` not found.", vim.log.levels.WARN)
   return
 end
@@ -21,7 +17,7 @@ local root_files = {
 
 vim.lsp.start {
   name = 'luals',
-  cmd = { lua_ls_cmd },
+  cmd = { 'lua-language-server' },
   root_dir = vim.fs.dirname(vim.fs.find(root_files, { upward = true })[1]),
   capabilities = require('utils.lsp').make_client_capabilities(),
   settings = {
