@@ -78,7 +78,7 @@ with final.pkgs.lib; let
     tokyonight-nvim
 
     # Special LSP plugins
-    rustaceanvim
+    # rustaceanvim
 
     # Misc
     mini-nvim
