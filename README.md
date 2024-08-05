@@ -13,6 +13,6 @@ The actually config itself is based on [kickstart.nvim](https://github.com/nvim-
 Many LSPs, formatters and others are not packaged in this flake. You have
 to provide them yourself.
 
-To me this makes sense because the configuration should describe how to get or build those dependencies, it just expects them to be available.
+To me this makes sense because an editor configuration should not describe how to get or build those dependencies, it just expects them to be available.
 
 So you can install them globally, or add them to a per-project flake.

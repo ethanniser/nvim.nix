@@ -12,6 +12,7 @@ run:
 
 format:
     stylua .
+    alejandra --quiet .
 
 diff:
     #!/usr/bin/env bash

@@ -28,11 +28,15 @@ with final.pkgs.lib; let
   all-plugins = with pkgs.vimPlugins; [
     # plugins from nixpkgs go in here.
     # https://search.nixos.org/packages?channel=unstable&from=0&size=50&sort=relevance&type=packages&query=vimPlugins
-    nvim-treesitter.withAllGrammars
-    luasnip # snippets | https://github.com/l3mon4d3/luasnip/
+    # Can also add packages directly from flake inputs: `(mkNvimPlugin inputs.wf-nvim "wf.nvim")`
 
+    # Treesitter
+    nvim-treesitter.withAllGrammars # https://github.com/nvim-treesitter/nvim-treesitter
 
-    # nvim-cmp (autocompletion) and extensions
+    # Snippets
+    luasnip # https://github.com/l3mon4d3/luasnip/
+
+    # Completions
     nvim-cmp # https://github.com/hrsh7th/nvim-cmp
     cmp_luasnip # snippets autocompletion extension for nvim-cmp | https://github.com/saadparwaiz1/cmp_luasnip/
     lspkind-nvim # vscode-like LSP pictograms | https://github.com/onsails/lspkind.nvim/
@@ -43,28 +47,24 @@ with final.pkgs.lib; let
     cmp-nvim-lua # neovim lua API as completion source | https://github.com/hrsh7th/cmp-nvim-lua/
     cmp-cmdline # cmp command line suggestions
     cmp-cmdline-history # cmp command line history suggestions
-    # ^ nvim-cmp extensions
 
-
-    # git integration plugins
+    # Git
     diffview-nvim # https://github.com/sindrets/diffview.nvim/
     gitsigns-nvim # https://github.com/lewis6991/gitsigns.nvim/
-    # ^ git integration plugins
 
     # telescope and extensions
     telescope-nvim # https://github.com/nvim-telescope/telescope.nvim/
     telescope-fzy-native-nvim # https://github.com/nvim-telescope/telescope-fzy-native.nvim
-    # telescope-smart-history-nvim # https://github.com/nvim-telescope/telescope-smart-history.nvim
-    # ^ telescope and extensions
 
     # UI
     lualine-nvim # Status line | https://github.com/nvim-lualine/lualine.nvim/
     nvim-navic # Add LSP location to lualine | https://github.com/SmiteshP/nvim-navic
     nvim-treesitter-context # nvim-treesitter-context
-    # ^ UI
+    which-key-nvim
 
-    # language support
-    # ^ language support
+    # Files
+    oil-nvim # https://github.com/stevearc/oil.nvim
+    neo-tree-nvim # https://github.com/nvim-neo-tree/neo-tree.nvim
 
     # navigation/editing enhancement plugins
     vim-unimpaired # predefined ] and [ navigation keymaps | https://github.com/tpope/vim-unimpaired/
@@ -77,19 +77,13 @@ with final.pkgs.lib; let
     nvim-unception # Prevent nested neovim sessions | nvim-unception
     # ^ Useful utilities
 
-
-    # libraries that other plugins depend on
+    # General Dependencies
     sqlite-lua
     plenary-nvim
     nvim-web-devicons
-    vim-repeat
-    # ^ libraries that other plugins depend on
 
-    
-    # bleeding-edge plugins from flake inputs
-    # (mkNvimPlugin inputs.wf-nvim "wf.nvim") # (example) keymap hints | https://github.com/Cassin01/wf.nvim
-    # ^ bleeding-edge plugins from flake inputs
-    which-key-nvim
+    # Formatters
+    conform-nvim
   ];
 
   extraPackages = with pkgs; [
