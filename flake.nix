@@ -60,7 +60,7 @@
     in {
       packages = rec {
         default = nvim;
-        nvim = pkgs.nvim-pkg;
+        nvim = pkgs.configured-nvim;
       };
       devShells = {
         default = shell;

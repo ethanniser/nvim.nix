@@ -45,6 +45,16 @@ if vim.fn.executable('nil') == 1 then
   lspconfig['nil_ls'].setup {}
 end
 
+-- Rust
+if vim.fn.executable('rust-analyzer') == 1 then
+  lspconfig['rust_analyzer'].setup {}
+end
+
+-- Zig
+if vim.fn.executable('zls') == 1 then
+  lspconfig['zls'].setup {}
+end
+
 -- Bind the `lsp_signature` to the LSP servers. This has to be called after the
 -- setup of LSPs.
 local signature_opts = {

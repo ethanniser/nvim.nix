@@ -113,6 +113,8 @@ with final.pkgs.lib; let
     # Language Servers
     lua-language-server
     nil
+    rust-analyzer
+    zls
 
     # Formatters
     stylua
@@ -128,7 +130,7 @@ in {
     inherit extraPackages;
   };
 
-  nvim-expected-deps = pkgs.buildEnv {
+  configured-nvim-deps = pkgs.buildEnv {
     name = "nvim-expected-deps";
     paths = expectedDeps;
   };
