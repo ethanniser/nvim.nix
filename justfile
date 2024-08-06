@@ -30,9 +30,10 @@ commit:
     set -euxo pipefail
 
     if ! git diff --quiet || ! git diff --quiet --cached; then
-        gen=$(darwin-rebuild --list-generations | grep current)
+        gen=$(date +"%Y-%m-%d %H:%M:%S")
         git commit -am "$gen"
         git push --quiet
     else
         echo "No changes to commit."
     fi
+
