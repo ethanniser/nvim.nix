@@ -1,7 +1,7 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
-vim.g.test = 2
+vim.g.test = 3
 
 if vim.g.neovide then
   require('neovide')
