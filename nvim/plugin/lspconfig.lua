@@ -2,16 +2,28 @@ local lspconfig = require('lspconfig')
 
 vim.diagnostic.config { update_in_insert = false }
 
--- Load LSP servers. Only load them if they're available.
+-- LSP servers and clients are able to communicate to each other what features they support.
+--  By default, Neovim doesn't support everything that is in the LSP Specification.
+--  When you add nvim-cmp, luasnip, etc. Neovim now has *more* capabilities.
+--  So, we create new capabilities with nvim cmp, and then broadcast that to the servers.
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
--- Typescript
-if vim.fn.executable('tsserver') == 1 then
-  lspconfig['tsserver'].setup {}
-end
+-- Enable the following language servers
+--  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
+--
+--  Add any additional override configuration in the following tables. Available keys are:
+--  - cmd (table): Override the default command used to start the server
+--  - filetypes (table): Override the default list of associated filetypes for the server
+--  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
+--  - settings (table): Override the default settings passed when initializing the server.
+--        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
+local servers = {
+  -- Typescript
+  tsserver = {},
 
--- Lua
-if vim.fn.executable('lua-language-server') then
-  lspconfig['lua_ls'].setup {
+  -- Lua
+  lua_ls = {
     settings = {
       Lua = {
         runtime = {
@@ -37,22 +49,27 @@ if vim.fn.executable('lua-language-server') then
         },
       },
     },
-  }
+  },
+
+  -- Nix
+  nil_ls = {},
+
+  -- Rust
+  rust_analyzer = {},
+
+  -- Zig
+  zls = {},
+}
+
+local function setup_server(server_name)
+  local server = servers[server_name] or {}
+  server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
+  lspconfig[server_name].setup(server)
 end
 
--- Nix
-if vim.fn.executable('nil') == 1 then
-  lspconfig['nil_ls'].setup {}
-end
-
--- Rust
-if vim.fn.executable('rust-analyzer') == 1 then
-  lspconfig['rust_analyzer'].setup {}
-end
-
--- Zig
-if vim.fn.executable('zls') == 1 then
-  lspconfig['zls'].setup {}
+-- Iterate over each server and setup
+for server_name in pairs(servers) do
+  setup_server(server_name)
 end
 
 -- Bind the `lsp_signature` to the LSP servers. This has to be called after the
