@@ -65,6 +65,8 @@ with final.pkgs.lib; let
     which-key-nvim # https://github.com/folke/which-key.nvim
     nvim-notify # UI popup notifications | https://github.com/rcarriga/nvim-notify
     dressing-nvim # improves default vim.ui | https://github.com/stevearc/dressing.nvim
+    nvim-scrollbar # scroll bar with git/diagnostics | https://github.com/petertriho/nvim-scrollbar
+    nvim-lsp-notify # Add notification on lsp progress | https://github.com/mrded/nvim-lsp-notify
 
     # Files
     oil-nvim # https://github.com/stevearc/oil.nvim
