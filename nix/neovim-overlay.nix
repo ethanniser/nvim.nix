@@ -123,12 +123,15 @@ with final.pkgs.lib; let
 in {
   # This is the neovim derivation
   # returned by the overlay
-  nvim-pkg = mkNeovim {
+  configured-nvim = mkNeovim {
     plugins = all-plugins;
     inherit extraPackages;
   };
 
-  inherit expectedDeps;
+  nvim-expected-deps = pkgs.stdenv.mkDerivation {
+    name = "nvim-expected-deps";
+    buildInputs = expectedDeps;
+  };
 
   # This can be symlinked in the devShell's shellHook
   nvim-luarc-json = final.mk-luarc-json {
