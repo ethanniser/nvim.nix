@@ -1,4 +1,4 @@
-vim.keymap.set('n', 'gg', '<cmd>Lazygit<cr>', { desc = 'Open parent directory' })
+vim.keymap.set('n', 'gg', '<cmd>LazyGit<cr>', { desc = 'Open parent directory' })
 
 vim.api.nvim_create_autocmd('BufEnter', {
   desc = 'Set lazygit project root when opening a new buffer',
