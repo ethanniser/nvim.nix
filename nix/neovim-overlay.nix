@@ -86,6 +86,7 @@ with final.pkgs.lib; let
     # Misc
     mini-nvim
     nvim-unception # Prevent nested neovim sessions | nvim-unception
+    todo-comments-nvim # https://github.com/folke/todo-comments.nvim
     # ^ Useful utilities
 
     # General Dependencies
