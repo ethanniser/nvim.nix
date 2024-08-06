@@ -1,0 +1,3 @@
+-- vim.keymap.set('n', '<leader>z', ':Lz<CR>', { noremap = true, silent = true })
+-- vim.keymap.set('n', '<leader>zi', ':Zi<CR>', { noremap = true, silent = true })
+-- How to put in prompt or something?
