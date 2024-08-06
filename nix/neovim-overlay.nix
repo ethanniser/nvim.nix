@@ -63,7 +63,8 @@ with final.pkgs.lib; let
     nvim-navic # Add LSP location to lualine | https://github.com/SmiteshP/nvim-navic
     nvim-treesitter-context # nvim-treesitter-context
     which-key-nvim # https://github.com/folke/which-key.nvim
-    nvim-notify
+    nvim-notify # UI popup notifications | https://github.com/rcarriga/nvim-notify
+    dressing-nvim # improves default vim.ui | https://github.com/stevearc/dressing.nvim
 
     # Files
     oil-nvim # https://github.com/stevearc/oil.nvim
