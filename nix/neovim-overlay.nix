@@ -88,6 +88,7 @@ with final.pkgs.lib; let
     # LSP
     nvim-lspconfig
     lsp_signature-nvim
+    aerial-nvim # Code outline | https://github.com/stevearc/aerial.nvim
     # rustaceanvim
 
     # Misc
