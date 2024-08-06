@@ -128,10 +128,9 @@ in {
     inherit extraPackages;
   };
 
-  nvim-expected-deps = pkgs.stdenv.mkDerivation {
+  nvim-expected-deps = pkgs.buildEnv {
     name = "nvim-expected-deps";
-    src = null;
-    buildInputs = expectedDeps;
+    paths = expectedDeps;
   };
 
   # This can be symlinked in the devShell's shellHook
