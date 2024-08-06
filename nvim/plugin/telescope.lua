@@ -38,6 +38,7 @@ t.setup {
 pcall(t.load_extension, 'fzf') -- telescope-fzf-native.nvim
 pcall(t.load_extension, 'ui-select') -- telescope-ui-select.nvim
 pcall(t.load_extension, 'helpgrep') -- telescope-helpgrep.nvim
+pcall(t.load_extension, 'lazygit') -- lazygit.nvim
 
 -- See `:help telescope.builtin`
 local builtin = require('telescope.builtin')
