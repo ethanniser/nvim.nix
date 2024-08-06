@@ -65,8 +65,10 @@ with final.pkgs.lib; let
     # Files
     oil-nvim # https://github.com/stevearc/oil.nvim
     neo-tree-nvim # https://github.com/nvim-neo-tree/neo-tree.nvim
-    zoxide-vim
+    telescope-zoxide
     fzf-vim
+    telescope-file-browser-nvim
+
     # navigation/editing enhancement plugins
     eyeliner-nvim # Highlights unique characters for f/F and t/T motions | https://github.com/jinh0/eyeliner.nvim
     nvim-surround # https://github.com/kylechui/nvim-surround/

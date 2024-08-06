@@ -17,9 +17,16 @@
 -- telescope picker. This is really useful to discover what Telescope can
 -- do as well as how to actually do it!
 
+local z_utils = require('telescope._extensions.zoxide.utils')
+local t = require('telescope')
+
+local add_zoxide = function(file_path)
+  vim.fn.system { 'zoxide', 'add', file_path }
+end
+
 -- [[ Configure Telescope ]]
 -- See `:help telescope` and `:help telescope.setup()`
-require('telescope').setup {
+t.setup {
   -- You can put your default mappings / updates / etc. in here
   --  All the info you're looking for is in `:help telescope.setup()`
   --
@@ -33,12 +40,77 @@ require('telescope').setup {
     ['ui-select'] = {
       require('telescope.themes').get_dropdown(),
     },
+    zoxide = {
+      mappings = {
+        default = {
+          action = function(selection)
+            vim.cmd.edit(selection.path)
+            add_zoxide(selection.path)
+          end,
+          after_action = function(selection)
+            print('Directory changed to ' .. selection.path)
+          end,
+        },
+        ['<C-s>'] = {
+          action = function(selection)
+            vim.cmd.split(selection.path)
+            add_zoxide(selection.path)
+          end,
+        },
+        ['<C-v>'] = {
+          action = function(selection)
+            vim.cmd.vsplit(selection.path)
+            add_zoxide(selection.path)
+          end,
+        },
+        ['<C-e>'] = {
+          action = function(selection)
+            vim.cmd.edit(selection.path)
+            add_zoxide(selection.path)
+          end,
+        },
+        ['<C-b>'] = {
+          keepinsert = true,
+          action = function(selection)
+            t.extensions.file_browser.file_browser { cwd = selection.path }
+            add_zoxide(selection.path)
+          end,
+        },
+        ['<C-f>'] = {
+          keepinsert = true,
+          action = function(selection)
+            builtin.find_files { cwd = selection.path }
+            add_zoxide(selection.path)
+          end,
+        },
+        ['<C-t>'] = {
+          action = function(selection)
+            vim.cmd.tcd(selection.path)
+            add_zoxide(selection.path)
+          end,
+        },
+      },
+    },
+    file_browser = {
+      hijack_netrw = false,
+    },
   },
 }
 
+-- Add directory to zoxide when changed for example with `:cd`
+local zoxide_group = vim.api.nvim_create_augroup('zoxide', {})
+vim.api.nvim_create_autocmd({ 'DirChanged' }, {
+  group = zoxide_group,
+  callback = function(ev)
+    add_zoxide(ev.file)
+  end,
+})
+
 -- Enable telescope extensions, if they are installed
-pcall(require('telescope').load_extension, 'fzf')
-pcall(require('telescope').load_extension, 'ui-select')
+pcall(t.load_extension, 'fzf')
+pcall(t.load_extension, 'ui-select')
+pcall(t.load_extension, 'zoxide')
+pcall(t.load_extension, 'file_browser')
 
 -- See `:help telescope.builtin`
 local builtin = require('telescope.builtin')
@@ -75,3 +147,6 @@ end, { desc = '[S]earch [/] in Open Files' })
 vim.keymap.set('n', '<leader>sn', function()
   builtin.find_files { cwd = vim.fn.stdpath('config') }
 end, { desc = '[S]earch [N]eovim files' })
+
+-- zoxide
+vim.keymap.set('n', '<leader>cd', t.extensions.zoxide.list, { desc = '[C]hange [D]irectory' })
