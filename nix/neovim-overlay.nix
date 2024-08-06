@@ -51,6 +51,7 @@ with final.pkgs.lib; let
     # Git
     diffview-nvim # https://github.com/sindrets/diffview.nvim/
     gitsigns-nvim # https://github.com/lewis6991/gitsigns.nvim/
+    lazygit-nvim # https://github.com/kdheepak/lazygit.nvim
 
     # telescope and extensions
     telescope-nvim # https://github.com/nvim-telescope/telescope.nvim/

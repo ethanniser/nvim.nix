@@ -2,7 +2,7 @@
 vim.g.neovide_cursor_animation_length = 0.05
 vim.g.neovide_cursor_trail_size = 0.4
 
-vim.opt.lineheight = 0
+vim.opt.linespace = 0
 
 vim.o.guifont = 'MesloLGS Nerd Font:h14'
 vim.keymap.set('n', '<D-s>', ':w<CR>') -- Save
