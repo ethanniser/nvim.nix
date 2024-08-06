@@ -77,6 +77,7 @@ with final.pkgs.lib; let
     indent-blankline-nvim # https://github.com/lukas-reineke/indent-blankline.nvim
     comment-nvim # https://github.com/numToStr/Comment.nvim
     nvim-autopairs # Automatically create matching pairs | https://github.com/windwp/nvim-autopairs
+    (mkNvimPlugin inputs.nvim-ts-autotag "nvim-ts-autotag") # Automaticall close and rename html tags | https://github.com/windwp/nvim-ts-autotag
     # ^ navigation/editing enhancement plugins
 
     # Color Schemes

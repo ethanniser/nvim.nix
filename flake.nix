@@ -12,6 +12,10 @@
       url = "github:catgoose/telescope-helpgrep.nvim";
       flake = false;
     };
+    nvim-ts-autotag = {
+      url = "https://github.com/windwp/nvim-ts-autotag";
+      falake = false;
+    };
   };
 
   outputs = inputs @ {
