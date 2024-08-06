@@ -57,6 +57,7 @@ with final.pkgs.lib; let
     telescope-nvim # https://github.com/nvim-telescope/telescope.nvim/
     telescope-fzy-native-nvim # https://github.com/nvim-telescope/telescope-fzy-native.nvim
     (mkNvimPlugin inputs.telescope-helpgrep-nvim "telescope-helpgrep-nvim")
+    telescope-zoxide # use zoxide with telescope | https://github.com/jvgrootveld/telescope-zoxide
 
     # UI
     lualine-nvim # Status line | https://github.com/nvim-lualine/lualine.nvim/

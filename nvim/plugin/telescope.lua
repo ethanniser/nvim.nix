@@ -18,6 +18,12 @@
 -- do as well as how to actually do it!
 
 local t = require('telescope')
+-- See `:help telescope.builtin`
+local builtin = require('telescope.builtin')
+
+local add_zoxide = function(file_path)
+  vim.fn.system { 'zoxide', 'add', file_path }
+end
 
 -- [[ Configure Telescope ]]
 -- See `:help telescope` and `:help telescope.setup()`
@@ -31,7 +37,59 @@ t.setup {
   --   },
   -- },
   -- pickers = {}
-  extensions = {},
+  extensions = {
+    zoxide = {
+      mappings = {
+        default = {
+          action = function(selection)
+            vim.cmd.edit(selection.path)
+            add_zoxide(selection.path)
+          end,
+          after_action = function(selection)
+            print('Directory changed to ' .. selection.path)
+          end,
+        },
+        ['<C-s>'] = {
+          action = function(selection)
+            vim.cmd.split(selection.path)
+            add_zoxide(selection.path)
+          end,
+        },
+        ['<C-v>'] = {
+          action = function(selection)
+            vim.cmd.vsplit(selection.path)
+            add_zoxide(selection.path)
+          end,
+        },
+        ['<C-e>'] = {
+          action = function(selection)
+            vim.cmd.edit(selection.path)
+            add_zoxide(selection.path)
+          end,
+        },
+        ['<C-b>'] = {
+          keepinsert = true,
+          action = function(selection)
+            vim.cmd('e ' .. selection.path)
+            add_zoxide(selection.path)
+          end,
+        },
+        ['<C-f>'] = {
+          keepinsert = true,
+          action = function(selection)
+            builtin.find_files { cwd = selection.path }
+            add_zoxide(selection.path)
+          end,
+        },
+        ['<C-t>'] = {
+          action = function(selection)
+            vim.cmd.tcd(selection.path)
+            add_zoxide(selection.path)
+          end,
+        },
+      },
+    },
+  },
 }
 
 -- Enable telescope extensions, if they are installed
@@ -39,9 +97,8 @@ pcall(t.load_extension, 'fzf') -- telescope-fzf-native.nvim
 pcall(t.load_extension, 'ui-select') -- telescope-ui-select.nvim
 pcall(t.load_extension, 'helpgrep') -- telescope-helpgrep.nvim
 pcall(t.load_extension, 'lazygit') -- lazygit.nvim
+pcall(t.load_extension, 'zoxide') -- telescope-zoxide
 
--- See `:help telescope.builtin`
-local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
 -- vim.keymap.set('n', '<leader>shg', require('telescope-helpgrep').live_grep, { desc = '[S]earch [H]elp [G]rep' })
 vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
@@ -77,3 +134,6 @@ end, { desc = '[S]earch [/] in Open Files' })
 vim.keymap.set('n', '<leader>sn', function()
   builtin.find_files { cwd = vim.fn.stdpath('config') }
 end, { desc = '[S]earch [N]eovim files' })
+
+-- zoxide
+vim.keymap.set('n', '<leader>cd', t.extensions.zoxide.list, { desc = '[C]hange [D]irectory' })
