@@ -1,9 +1,6 @@
 -- [[ Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
--- Setup lsp keybinds on 'LspAttach'
-require('utils.lsp').setup()
-
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
 --  See `:help vim.highlight.on_yank()`

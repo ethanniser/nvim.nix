@@ -97,6 +97,29 @@ with final.pkgs.lib; let
   ];
 
   extraPackages = with pkgs; [];
+
+  expectedDeps = with pkgs;[
+    # These are all of the dependencies that are expected to be installed by my configuration
+    # You can use this part of the overlay if you want to make sure you have all of them
+    # but its perfectly reasonable just to install them yourself globally or per project in a flake
+    # This is more just to document it for me
+
+    # Utils
+    ripgrep
+    fzf
+    zoxide
+    fd
+
+    # Language Servers
+    lua-language-server
+    nil
+
+    # Formatters
+    stylua
+    prettierd
+    alejandra
+    just
+  ];
 in {
   # This is the neovim derivation
   # returned by the overlay
@@ -104,6 +127,8 @@ in {
     plugins = all-plugins;
     inherit extraPackages;
   };
+
+  inherit expectedDeps;
 
   # This can be symlinked in the devShell's shellHook
   nvim-luarc-json = final.mk-luarc-json {
