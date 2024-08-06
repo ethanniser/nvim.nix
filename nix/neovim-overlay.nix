@@ -86,9 +86,9 @@ with final.pkgs.lib; let
     # rustaceanvim
 
     # Misc
-    mini-nvim
-    nvim-unception # Prevent nested neovim sessions | nvim-unception
-    todo-comments-nvim # https://github.com/folke/todo-comments.nvim
+    mini-nvim # assorted tools | https://github.com/echasnovski/mini.nvim
+    todo-comments-nvim # highlights 'TODO' comments | https://github.com/folke/todo-comments.nvim
+    vim-sleuth # Detect tabstop and shiftwidth automatically | https://github.com/tpope/vim-sleuth
     # ^ Useful utilities
 
     # General Dependencies
