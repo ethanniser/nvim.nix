@@ -18,12 +18,8 @@ diff:
     #!/usr/bin/env bash
     set -euxo pipefail
 
-    if ! git diff --quiet || ! git diff --quiet --cached; then
-        git diff -U0
-        git diff --cached -U0
-    else
-        echo "No changes detected."
-    fi
+    git diff -U0
+    git diff --cached -U0
 
 commit:
     #!/usr/bin/env bash
@@ -32,8 +28,8 @@ commit:
     if ! git diff --quiet || ! git diff --quiet --cached; then
         gen=$(date +"%Y-%m-%d %H:%M:%S")
         git commit -am "$gen"
-        git push --quiet
     else
         echo "No changes to commit."
     fi
 
+    git push --quiet
