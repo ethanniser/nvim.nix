@@ -77,7 +77,9 @@ with final.pkgs.lib; let
     # Color Schemes
     tokyonight-nvim
 
-    # Special LSP plugins
+    # LSP
+    nvim-lspconfig
+    lsp_signature-nvim
     # rustaceanvim
 
     # Misc
