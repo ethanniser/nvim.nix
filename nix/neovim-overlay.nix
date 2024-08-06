@@ -61,7 +61,7 @@ with final.pkgs.lib; let
     lualine-nvim # Status line | https://github.com/nvim-lualine/lualine.nvim/
     nvim-navic # Add LSP location to lualine | https://github.com/SmiteshP/nvim-navic
     nvim-treesitter-context # nvim-treesitter-context
-    which-key-nvim
+    which-key-nvim # https://github.com/folke/which-key.nvim
 
     # Files
     oil-nvim # https://github.com/stevearc/oil.nvim
@@ -73,6 +73,8 @@ with final.pkgs.lib; let
     nvim-surround # https://github.com/kylechui/nvim-surround/
     nvim-treesitter-textobjects # https://github.com/nvim-treesitter/nvim-treesitter-textobjects/
     nvim-ts-context-commentstring # https://github.com/joosepalviste/nvim-ts-context-commentstring/
+    indent-blankline-nvim # https://github.com/lukas-reineke/indent-blankline.nvim
+    comment-nvim # https://github.com/numToStr/Comment.nvim
     # ^ navigation/editing enhancement plugins
 
     # Color Schemes
