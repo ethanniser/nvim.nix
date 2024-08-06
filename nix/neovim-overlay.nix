@@ -55,6 +55,7 @@ with final.pkgs.lib; let
     # telescope and extensions
     telescope-nvim # https://github.com/nvim-telescope/telescope.nvim/
     telescope-fzy-native-nvim # https://github.com/nvim-telescope/telescope-fzy-native.nvim
+    (mkNvimPlugin inputs.telescope-helpgrep-nvim "telescope-helpgrep-nvim")
 
     # UI
     lualine-nvim # Status line | https://github.com/nvim-lualine/lualine.nvim/
@@ -65,9 +66,7 @@ with final.pkgs.lib; let
     # Files
     oil-nvim # https://github.com/stevearc/oil.nvim
     neo-tree-nvim # https://github.com/nvim-neo-tree/neo-tree.nvim
-    telescope-zoxide
     fzf-vim
-    telescope-file-browser-nvim
 
     # navigation/editing enhancement plugins
     eyeliner-nvim # Highlights unique characters for f/F and t/T motions | https://github.com/jinh0/eyeliner.nvim

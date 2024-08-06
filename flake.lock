@@ -103,7 +103,8 @@
       "inputs": {
         "flake-utils": "flake-utils",
         "gen-luarc": "gen-luarc",
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": "nixpkgs_2",
+        "telescope-helpgrep-nvim": "telescope-helpgrep-nvim"
       }
     },
     "systems": {
@@ -118,6 +119,22 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "telescope-helpgrep-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1716032219,
+        "narHash": "sha256-ZVWNqXZngTIj9otiFt+/lUm7V8GA378FdlJG78+SJNY=",
+        "owner": "catgoose",
+        "repo": "telescope-helpgrep.nvim",
+        "rev": "641b2f1b4559a67731dc42fd84203817ebd6e2ce",
+        "type": "github"
+      },
+      "original": {
+        "owner": "catgoose",
+        "repo": "telescope-helpgrep.nvim",
         "type": "github"
       }
     }
