@@ -98,7 +98,7 @@ with final.pkgs.lib; let
 
   extraPackages = with pkgs; [];
 
-  expectedDeps = with pkgs;[
+  expectedDeps = with pkgs; [
     # These are all of the dependencies that are expected to be installed by my configuration
     # You can use this part of the overlay if you want to make sure you have all of them
     # but its perfectly reasonable just to install them yourself globally or per project in a flake
@@ -130,6 +130,7 @@ in {
 
   nvim-expected-deps = pkgs.stdenv.mkDerivation {
     name = "nvim-expected-deps";
+    src = null;
     buildInputs = expectedDeps;
   };
 
