@@ -72,6 +72,7 @@ with final.pkgs.lib; let
     oil-nvim # https://github.com/stevearc/oil.nvim
     neo-tree-nvim # https://github.com/nvim-neo-tree/neo-tree.nvim
     fzf-vim
+    harpoon2 # File marking and quick navigation | https://github.com/ThePrimeagen/harpoon/tree/harpoon2
 
     # navigation/editing enhancement plugins
     eyeliner-nvim # Highlights unique characters for f/F and t/T motions | https://github.com/jinh0/eyeliner.nvim
