@@ -67,6 +67,7 @@ with final.pkgs.lib; let
     nvim-notify # UI popup notifications | https://github.com/rcarriga/nvim-notify
     dressing-nvim # improves default vim.ui | https://github.com/stevearc/dressing.nvim
     nvim-scrollbar # scroll bar with git/diagnostics | https://github.com/petertriho/nvim-scrollbar
+    alpha-nvim # Startup page | https://github.com/goolord/alpha-nvim?tab=readme-ov-file
 
     # Files
     oil-nvim # https://github.com/stevearc/oil.nvim
@@ -89,6 +90,7 @@ with final.pkgs.lib; let
 
     # Color Schemes
     tokyonight-nvim
+    catppuccin-nvim # https://github.com/catppuccin/nvim/
 
     # LSP
     nvim-lspconfig
