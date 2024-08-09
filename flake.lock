@@ -55,6 +55,22 @@
         "type": "github"
       }
     },
+    "gx-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1722942704,
+        "narHash": "sha256-P2euQwbzLn++pbXP29Kzhv9kM99lCAk7mIeBaT8SWqI=",
+        "owner": "chrishrb",
+        "repo": "gx.nvim",
+        "rev": "28060914ee334da8a7f3c17509fd23cec023a0f7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "chrishrb",
+        "repo": "gx.nvim",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1718714799,
@@ -103,6 +119,7 @@
       "inputs": {
         "flake-utils": "flake-utils",
         "gen-luarc": "gen-luarc",
+        "gx-nvim": "gx-nvim",
         "nixpkgs": "nixpkgs_2",
         "telescope-helpgrep-nvim": "telescope-helpgrep-nvim"
       }
