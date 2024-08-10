@@ -127,6 +127,10 @@ with final.pkgs.lib; let
     zoxide
     fd
 
+    # Git
+    git
+    lazygit
+
     # Language Servers
     lua-language-server
     nil
