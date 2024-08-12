@@ -21,11 +21,11 @@ local function getGreeting(name)
     [3] = '󰖔  Good evening',
   }
   local greetingIndex = 0
-  if hour > 3 and hour < 12 then
+  if hour >= 3 and hour < 12 then
     greetingIndex = 1
-  elseif hour > 12 and hour < 18 then
+  elseif hour >= 12 and hour < 18 then
     greetingIndex = 2
-  elseif hour > 18 or hour < 3 then
+  elseif hour >= 18 or hour < 3 then
     greetingIndex = 3
   end
   return datetime .. '\t' .. greetingsTable[greetingIndex] .. ', ' .. name
