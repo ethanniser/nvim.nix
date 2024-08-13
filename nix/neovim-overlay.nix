@@ -137,6 +137,7 @@ with final.pkgs.lib; let
     rust-analyzer
     zls
     nodePackages.typescript-language-server
+    astro-language-server
 
     # Formatters
     stylua
