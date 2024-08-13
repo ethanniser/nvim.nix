@@ -136,6 +136,7 @@ with final.pkgs.lib; let
     nil
     rust-analyzer
     zls
+    nodePackages.typescript-language-server
 
     # Formatters
     stylua
