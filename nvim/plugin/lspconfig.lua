@@ -59,6 +59,9 @@ local servers = {
 
   -- Zig
   zls = {},
+
+  -- Astro
+  astro = {},
 }
 
 local function setup_server(server_name)
