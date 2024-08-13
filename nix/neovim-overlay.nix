@@ -154,7 +154,7 @@ in {
   };
 
   configured-nvim-deps = pkgs.buildEnv {
-    name = "nvim-expected-deps";
+    name = "configured-nvim-deps";
     paths = expectedDeps;
   };
 
