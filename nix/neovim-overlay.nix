@@ -145,7 +145,7 @@ with final.pkgs.lib; let
     prettierd
     alejandra
     just
-    black
+    ruff
   ];
 in {
   # This is the neovim derivation
