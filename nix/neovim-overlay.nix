@@ -138,12 +138,14 @@ with final.pkgs.lib; let
     zls
     nodePackages.typescript-language-server
     astro-language-server
+    pyright
 
     # Formatters
     stylua
     prettierd
     alejandra
     just
+    black
   ];
 in {
   # This is the neovim derivation

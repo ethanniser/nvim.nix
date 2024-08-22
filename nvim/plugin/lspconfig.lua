@@ -62,6 +62,9 @@ local servers = {
 
   -- Astro
   astro = {},
+
+  -- Python
+  pyright = {},
 }
 
 local function setup_server(server_name)
