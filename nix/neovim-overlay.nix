@@ -48,6 +48,11 @@ with final.pkgs.lib; let
     cmp-cmdline # cmp command line suggestions
     cmp-cmdline-history # cmp command line history suggestions
 
+    # debugging
+    nvim-dap # https://github.com/mfussenegger/nvim-dap/
+    nvim-dap-ui # https://github.com/rcarriga/nvim-dap-ui/
+    nvim-dap-python # https://github.com/mfussenegger/nvim-dap-python
+
     # Git
     diffview-nvim # https://github.com/sindrets/diffview.nvim/
     gitsigns-nvim # https://github.com/lewis6991/gitsigns.nvim/
@@ -108,6 +113,7 @@ with final.pkgs.lib; let
     sqlite-lua
     plenary-nvim
     nvim-web-devicons
+    nvim-nio
 
     # Formatters
     conform-nvim
