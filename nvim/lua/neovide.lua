@@ -1,6 +1,7 @@
 -- Config
 vim.g.neovide_cursor_animation_length = 0.05
 vim.g.neovide_cursor_trail_size = 0.4
+vim.g.neovide_input_macos_option_key_is_meta = 'only_left'
 
 vim.o.guifont = 'MesloLGS Nerd Font:h14'
 vim.keymap.set('n', '<D-s>', ':w<CR>') -- Save
