@@ -25,6 +25,14 @@ with final.pkgs.lib; let
   #   optional = <true|false>; # Default: false
   #   ...
   # }
+  patched-eyeliner-nvim = pkgs.vimPlugins.eyeliner-nvim.overrideAttrs {
+    src = pkgs.fetchFromGitHub {
+      owner = "jinh0";
+      repo = "eyeliner.nvim";
+      rev = "be71bd4";
+      sha256 = "sPEsMP8FGiyzR54oZrybf5z8Zb+70UnpMPbrO9HVcps=";
+    };
+  }; # nixpkgs not yet updated see issue #51
   all-plugins = with pkgs.vimPlugins; [
     # plugins from nixpkgs go in here.
     # https://search.nixos.org/packages?channel=unstable&from=0&size=50&sort=relevance&type=packages&query=vimPlugins
@@ -81,7 +89,8 @@ with final.pkgs.lib; let
     harpoon2 # File marking and quick navigation | https://github.com/ThePrimeagen/harpoon/tree/harpoon2
 
     # navigation/editing enhancement plugins
-    # eyeliner-nvim # Highlights unique characters for f/F and t/T motions | https://github.com/jinh0/eyeliner.nvim
+
+    patched-eyeliner-nvim # Highlights unique characters for f/F and t/T motions | https://github.com/jinh0/eyeliner.nvim
     nvim-surround # https://github.com/kylechui/nvim-surround/
     nvim-treesitter-textobjects # https://github.com/nvim-treesitter/nvim-treesitter-textobjects/
     nvim-ts-context-commentstring # https://github.com/joosepalviste/nvim-ts-context-commentstring/
