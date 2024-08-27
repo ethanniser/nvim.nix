@@ -45,8 +45,8 @@ with final.pkgs.lib; let
     cmp-buffer # current buffer as completion source | https://github.com/hrsh7th/cmp-buffer/
     cmp-path # file paths as completion source | https://github.com/hrsh7th/cmp-path/
     cmp-nvim-lua # neovim lua API as completion source | https://github.com/hrsh7th/cmp-nvim-lua/
-    cmp-cmdline # cmp command line suggestions
-    cmp-cmdline-history # cmp command line history suggestions
+    cmp-cmdline # cmp command line suggestions | https://github.com/hrsh7th/cmp-cmdline/
+    cmp-cmdline-history # cmp command line history suggestions | https://github.com/dmitmel/cmp-cmdline-history/
 
     # debugging
     nvim-dap # https://github.com/mfussenegger/nvim-dap/
@@ -61,13 +61,13 @@ with final.pkgs.lib; let
     # telescope and extensions
     telescope-nvim # https://github.com/nvim-telescope/telescope.nvim/
     telescope-fzy-native-nvim # https://github.com/nvim-telescope/telescope-fzy-native.nvim
-    (mkNvimPlugin inputs.telescope-helpgrep-nvim "telescope-helpgrep-nvim")
+    (mkNvimPlugin inputs.telescope-helpgrep-nvim "telescope-helpgrep-nvim") # https://github.com/catgoose/telescope-helpgrep.nvim
     telescope-zoxide # use zoxide with telescope | https://github.com/jvgrootveld/telescope-zoxide
 
     # UI
     lualine-nvim # Status line | https://github.com/nvim-lualine/lualine.nvim/
     nvim-navic # Add LSP location to lualine | https://github.com/SmiteshP/nvim-navic
-    nvim-treesitter-context # nvim-treesitter-context
+    nvim-treesitter-context # nvim-treesitter-context | https://github.com/nvim-treesitter/nvim-treesitter-context/
     which-key-nvim # https://github.com/folke/which-key.nvim
     nvim-notify # UI popup notifications | https://github.com/rcarriga/nvim-notify
     dressing-nvim # improves default vim.ui | https://github.com/stevearc/dressing.nvim
@@ -77,7 +77,7 @@ with final.pkgs.lib; let
     # Files
     oil-nvim # https://github.com/stevearc/oil.nvim
     neo-tree-nvim # https://github.com/nvim-neo-tree/neo-tree.nvim
-    fzf-vim
+    fzf-vim # https://github.com/junegunn/fzf.vim
     harpoon2 # File marking and quick navigation | https://github.com/ThePrimeagen/harpoon/tree/harpoon2
 
     # navigation/editing enhancement plugins
@@ -89,17 +89,15 @@ with final.pkgs.lib; let
     comment-nvim # https://github.com/numToStr/Comment.nvim
     nvim-autopairs # Automatically create matching pairs | https://github.com/windwp/nvim-autopairs
     nvim-ts-autotag # Automaticall close and rename html tags | https://github.com/windwp/nvim-ts-autotag
-    (mkNvimPlugin inputs.gx-nvim "gx.nvim")
-    # open links with `gx` | https://github.com/chrishrb/gx.nvim
-    # ^ navigation/editing enhancement plugins
+    (mkNvimPlugin inputs.gx-nvim "gx.nvim") # open links with `gx` | https://github.com/chrishrb/gx.nvim
 
     # Color Schemes
-    tokyonight-nvim
+    tokyonight-nvim # https://github.com/folke/tokyonight.nvim/
     catppuccin-nvim # https://github.com/catppuccin/nvim/
 
     # LSP
-    nvim-lspconfig
-    lsp_signature-nvim
+    nvim-lspconfig # https://github.com/neovim/nvim-lspconfig/
+    lsp_signature-nvim # https://github.com/ray-x/lsp_signature.nvim/
     aerial-nvim # Code outline | https://github.com/stevearc/aerial.nvim
     # rustaceanvim
 
@@ -110,13 +108,13 @@ with final.pkgs.lib; let
     # ^ Useful utilities
 
     # General Dependencies
-    sqlite-lua
-    plenary-nvim
-    nvim-web-devicons
-    nvim-nio
+    sqlite-lua # https://github.com/kkharji/sqlite.lua/
+    plenary-nvim # https://github.com/nvim-lua/plenary.nvim/
+    nvim-web-devicons # https://github.com/nvim-tree/nvim-web-devicons/
+    nvim-nio # https://github.com/nvim-neotest/nvim-nio/
 
     # Formatters
-    conform-nvim
+    conform-nvim # https://github.com/stevearc/conform.nvim/
   ];
 
   extraPackages = with pkgs; [];
