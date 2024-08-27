@@ -124,6 +124,9 @@ with final.pkgs.lib; let
 
     # Formatters
     conform-nvim # https://github.com/stevearc/conform.nvim/
+
+    # Other
+    hardtime-nvim # Establish good habits | https://github.com/m4xshen/hardtime.nvim
   ];
 
   extraPackages = with pkgs; [];
