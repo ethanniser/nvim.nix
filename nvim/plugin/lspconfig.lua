@@ -91,6 +91,9 @@ local servers = {
       config.settings.python.pythonPath = get_python_path(config.root_dir)
     end,
   },
+
+  -- Tailwind
+  tailwindcss = {},
 }
 
 local function setup_server(server_name)

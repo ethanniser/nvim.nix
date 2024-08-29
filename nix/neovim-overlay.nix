@@ -155,6 +155,7 @@ with final.pkgs.lib; let
     nodePackages.typescript-language-server
     astro-language-server
     pyright
+    nodePackages.tailwindcss-language-server
 
     # Formatters
     stylua
