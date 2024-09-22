@@ -94,6 +94,9 @@ local servers = {
 
   -- Tailwind
   tailwindcss = {},
+
+  -- C++
+  clangd = {},
 }
 
 local function setup_server(server_name)
