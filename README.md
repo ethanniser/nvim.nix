@@ -19,4 +19,4 @@ To me this makes sense because an editor configuration should not describe how t
 
 So you can install them globally, or add them to a per-project flake.
 
-If you want to view all of the potential dependencies, you can look at the [packages.nix](./nix/packages.nix) file. There is defined a list of packages that could be used by the configuration. These are also exposed as their own package in the overlay: `configured-nvim-deps`.
+If you want to view all of the potential dependencies, you can look at the [neovim-overlay.nix](./nix/neovim-overlay.nix) file (the `expectedDeps` key). There is defined a list of packages that could be used by the configuration. These are also exposed as their own package in the overlay: `configured-nvim-deps`.
