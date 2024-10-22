@@ -153,6 +153,8 @@ with final.pkgs.lib; let
     rust-analyzer
     zls
     nodePackages.typescript-language-server
+    vscode-langservers-extracted
+    biome
     astro-language-server
     pyright
     tailwindcss-language-server

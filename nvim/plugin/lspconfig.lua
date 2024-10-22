@@ -42,7 +42,14 @@ capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp'
 --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
 local servers = {
   -- Typescript
+  -- TODO: change to 'ts_ls' when upgrading
   tsserver = {},
+
+  -- Biome
+  biome = {},
+
+  -- Eslint
+  eslint = {},
 
   -- Lua
   lua_ls = {
