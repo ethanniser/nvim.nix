@@ -158,7 +158,7 @@ with final.pkgs.lib; let
     astro-language-server
     pyright
     tailwindcss-language-server
-    hls
+    haskellPakages.hls
 
     # Formatters
     stylua
