@@ -104,6 +104,9 @@ local servers = {
 
   -- C++
   clangd = {},
+
+  -- Haskell
+  hls = {},
 }
 
 local function setup_server(server_name)
