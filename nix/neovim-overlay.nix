@@ -158,7 +158,7 @@ with final.pkgs.lib; let
     astro-language-server
     pyright
     tailwindcss-language-server
-    haskellPakages.hls
+    haskellPackages.hls
 
     # Formatters
     stylua
@@ -166,6 +166,7 @@ with final.pkgs.lib; let
     alejandra
     just
     ruff
+    haskellPackages.fourmolu
   ];
 in {
   # This is the neovim derivation
