@@ -166,7 +166,6 @@ with final.pkgs.lib; let
     alejandra
     just
     ruff
-    haskellPackages.fourmolu
   ];
 in {
   # This is the neovim derivation
