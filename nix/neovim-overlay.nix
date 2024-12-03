@@ -93,7 +93,8 @@ with final.pkgs.lib; let
     patched-eyeliner-nvim # Highlights unique characters for f/F and t/T motions | https://github.com/jinh0/eyeliner.nvim
     nvim-surround # https://github.com/kylechui/nvim-surround/
     nvim-treesitter-textobjects # https://github.com/nvim-treesitter/nvim-treesitter-textobjects/
-    nvim-ts-context-commentstring # https://github.com/joosepalviste/nvim-ts-context-commentstring/
+    # broke for some reason ?
+    # nvim-ts-context-commentstring # https://github.com/joosepalviste/nvim-ts-context-commentstring/
     indent-blankline-nvim # https://github.com/lukas-reineke/indent-blankline.nvim
     comment-nvim # https://github.com/numToStr/Comment.nvim
     nvim-autopairs # Automatically create matching pairs | https://github.com/windwp/nvim-autopairs
