@@ -21,6 +21,7 @@ require('conform').setup {
     nix = { 'alejandra' },
     just = { 'just' },
     python = { 'ruff_format' },
+    haskell = { 'fourmolu' },
     -- Conform can also run multiple formatters sequentially
     -- python = { "isort", "black" },
     --

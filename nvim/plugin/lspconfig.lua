@@ -106,7 +106,160 @@ local servers = {
   clangd = {},
 
   -- Haskell
-  hls = {},
+  hls = {
+    settings = {
+      formattingProvider = 'fourmolu',
+      maxCompletions = 40,
+      plugin = {
+        alternateNumberFormat = {
+          globalOn = true,
+        },
+        cabal = {
+          codeActionsOn = true,
+          completionOn = true,
+          diagnosticsOn = true,
+        },
+        cabalFmt = {
+          config = {
+            path = 'cabal-fmt',
+          },
+        },
+        cabalGild = {
+          config = {
+            path = 'cabal-gild',
+          },
+        },
+        callHierarchy = {
+          globalOn = true,
+        },
+        changeTypeSignature = {
+          globalOn = true,
+        },
+        class = {
+          codeActionsOn = true,
+          codeLensOn = true,
+        },
+        eval = {
+          globalOn = true,
+          config = {
+            diff = true,
+            exception = false,
+          },
+        },
+        explicitFields = {
+          globalOn = true,
+        },
+        explicitFixity = {
+          globalOn = true,
+        },
+        fourmolu = {
+          config = {
+            external = true,
+            path = '/Users/ethan/.cabal/bin/fourmolu',
+          },
+        },
+        gadt = {
+          globalOn = true,
+        },
+        ghcideCodeActionsBindings = {
+          globalOn = true,
+        },
+        ghcideCodeActionsFillHoles = {
+          globalOn = true,
+        },
+        ghcideCodeActionsImportsExports = {
+          globalOn = true,
+        },
+        ghcideCodeActionsTypeSignatures = {
+          globalOn = true,
+        },
+        ghcideCompletions = {
+          globalOn = true,
+          config = {
+            autoExtendOn = true,
+            snippetsOn = true,
+          },
+        },
+        ghcideHoverAndSymbols = {
+          hoverOn = true,
+          symbolsOn = true,
+        },
+        ghcideTypeLenses = {
+          globalOn = true,
+          config = {
+            mode = 'always',
+          },
+        },
+        hlint = {
+          codeActionsOn = true,
+          diagnosticsOn = true,
+          config = {
+            flags = {},
+          },
+        },
+        importLens = {
+          codeActionsOn = true,
+          codeLensOn = true,
+        },
+        moduleName = {
+          globalOn = true,
+        },
+        ormolu = {
+          config = {
+            external = false,
+          },
+        },
+        overloadedRecordDot = {
+          globalOn = true,
+        },
+        pragmasCompletion = {
+          globalOn = true,
+        },
+        pragmasDisable = {
+          globalOn = true,
+        },
+        pragmasSuggest = {
+          globalOn = true,
+        },
+        qualifyImportedNames = {
+          globalOn = true,
+        },
+        rename = {
+          globalOn = true,
+          config = {
+            crossModule = false,
+          },
+        },
+        retrie = {
+          globalOn = true,
+        },
+        semanticTokens = {
+          globalOn = false,
+          config = {
+            classMethodToken = 'method',
+            classToken = 'class',
+            dataConstructorToken = 'enumMember',
+            functionToken = 'function',
+            moduleToken = 'namespace',
+            operatorToken = 'operator',
+            patternSynonymToken = 'macro',
+            recordFieldToken = 'property',
+            typeConstructorToken = 'enum',
+            typeFamilyToken = 'interface',
+            typeSynonymToken = 'type',
+            typeVariableToken = 'typeParameter',
+            variableToken = 'variable',
+          },
+        },
+        splice = {
+          globalOn = true,
+        },
+        stan = {
+          globalOn = false,
+        },
+      },
+    },
+  },
 }
 
 local function setup_server(server_name)
