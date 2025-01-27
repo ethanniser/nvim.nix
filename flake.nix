@@ -8,10 +8,10 @@
 
     # Add bleeding-edge plugins here.
     # They can be updated with `nix flake update` (make sure to commit the generated flake.lock)
-    telescope-helpgrep-nvim = {
-      url = "github:catgoose/telescope-helpgrep.nvim";
-      flake = false;
-    };
+    # telescope-helpgrep-nvim = {
+    #   url = "github:catgoose/telescope-helpgrep.nvim";
+    #   flake = false;
+    # };
     gx-nvim = {
       url = "github:/chrishrb/gx.nvim";
       flake = false;

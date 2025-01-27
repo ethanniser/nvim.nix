@@ -69,7 +69,7 @@ with final.pkgs.lib; let
     # telescope and extensions
     telescope-nvim # https://github.com/nvim-telescope/telescope.nvim/
     telescope-fzy-native-nvim # https://github.com/nvim-telescope/telescope-fzy-native.nvim
-    (mkNvimPlugin inputs.telescope-helpgrep-nvim "telescope-helpgrep-nvim") # https://github.com/catgoose/telescope-helpgrep.nvim
+    # (mkNvimPlugin inputs.telescope-helpgrep-nvim "telescope-helpgrep-nvim") # https://github.com/catgoose/telescope-helpgrep.nvim
     telescope-zoxide # use zoxide with telescope | https://github.com/jvgrootveld/telescope-zoxide
 
     # UI
