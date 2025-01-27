@@ -39,11 +39,11 @@
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1710146030,
-        "narHash": "sha256-SZ5L6eA7HJ/nmkzGG7/ISclqe6oZdOZTNoesiInkXPQ=",
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "b1d9ab70662946ef0850d488da1c9019f3a9752a",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
         "type": "github"
       },
       "original": {
@@ -122,11 +122,11 @@
     "gx-nvim": {
       "flake": false,
       "locked": {
-        "lastModified": 1722942704,
-        "narHash": "sha256-P2euQwbzLn++pbXP29Kzhv9kM99lCAk7mIeBaT8SWqI=",
+        "lastModified": 1736242098,
+        "narHash": "sha256-S7GDbKvcmSfysahfq7yCw55R2LGriWM29yAX1mPn1LQ=",
         "owner": "chrishrb",
         "repo": "gx.nvim",
-        "rev": "28060914ee334da8a7f3c17509fd23cec023a0f7",
+        "rev": "c7e6a0ace694a098a5248d92a866c290bd2da1cc",
         "type": "github"
       },
       "original": {
@@ -197,11 +197,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1724224976,
-        "narHash": "sha256-Z/ELQhrSd7bMzTO8r7NZgi9g5emh+aRKoCdaAv5fiO0=",
+        "lastModified": 1737885589,
+        "narHash": "sha256-Zf0hSrtzaM1DEz8//+Xs51k/wdSajticVrATqDrfQjg=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "c374d94f1536013ca8e92341b540eba4c22f9c62",
+        "rev": "852ff1d9e153d8875a83602e03fdef8a63f0ecf8",
         "type": "github"
       },
       "original": {
@@ -216,8 +216,7 @@
         "flake-utils": "flake-utils",
         "gen-luarc": "gen-luarc",
         "gx-nvim": "gx-nvim",
-        "nixpkgs": "nixpkgs_2",
-        "telescope-helpgrep-nvim": "telescope-helpgrep-nvim"
+        "nixpkgs": "nixpkgs_2"
       }
     },
     "systems": {
@@ -232,22 +231,6 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
-        "type": "github"
-      }
-    },
-    "telescope-helpgrep-nvim": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1716032219,
-        "narHash": "sha256-ZVWNqXZngTIj9otiFt+/lUm7V8GA378FdlJG78+SJNY=",
-        "owner": "catgoose",
-        "repo": "telescope-helpgrep.nvim",
-        "rev": "641b2f1b4559a67731dc42fd84203817ebd6e2ce",
-        "type": "github"
-      },
-      "original": {
-        "owner": "catgoose",
-        "repo": "telescope-helpgrep.nvim",
         "type": "github"
       }
     }
