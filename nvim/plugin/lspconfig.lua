@@ -340,6 +340,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
     -- Fuzzy find all the symbols in your current workspace
     --  Similar to document symbols, except searches over your whole project.
+    --  TODO: blocked by leader w for save
     map('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
 
     -- Rename the variable under your cursor

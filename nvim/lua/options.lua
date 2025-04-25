@@ -90,8 +90,10 @@ vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 
 -- [[ Clipboard ]]
 
--- Sync Neovim's unnamed registers with the system clipboard
-vim.opt.clipboard = 'unnamed,unnamedplus'
+-- Sync Neovim's unnamed registers with the system clipboard (scheduled as to not block startup time)
+vim.schedule(function()
+  vim.opt.clipboard = 'unnamed,unnamedplus'
+end)
 
 -- Set fold settings
 -- These options were reccommended by nvim-ufo
@@ -122,3 +124,14 @@ vim.opt.guicursor = {
 
 -- Enable virtual text for diagnostics on the current line
 vim.diagnostic.config { virtual_lines = { current_line = true } }
+
+-- Preview substitutions live, as you type!
+vim.opt.inccommand = 'split'
+
+-- Show which line your cursor is on
+vim.opt.cursorline = true
+
+-- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
+-- instead raise a dialog asking if you wish to save the current file(s)
+-- See `:help 'confirm'`
+vim.opt.confirm = true
