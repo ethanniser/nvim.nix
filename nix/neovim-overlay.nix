@@ -25,14 +25,6 @@ with final.pkgs.lib; let
   #   optional = <true|false>; # Default: false
   #   ...
   # }
-  patched-eyeliner-nvim = pkgs.vimPlugins.eyeliner-nvim.overrideAttrs {
-    src = pkgs.fetchFromGitHub {
-      owner = "jinh0";
-      repo = "eyeliner.nvim";
-      rev = "be71bd4";
-      sha256 = "sPEsMP8FGiyzR54oZrybf5z8Zb+70UnpMPbrO9HVcps=";
-    };
-  }; # nixpkgs not yet updated see issue #51
   all-plugins = with pkgs.vimPlugins; [
     # plugins from nixpkgs go in here.
     # https://search.nixos.org/packages?channel=unstable&from=0&size=50&sort=relevance&type=packages&query=vimPlugins
@@ -90,7 +82,7 @@ with final.pkgs.lib; let
 
     # navigation/editing enhancement plugins
 
-    patched-eyeliner-nvim # Highlights unique characters for f/F and t/T motions | https://github.com/jinh0/eyeliner.nvim
+    eyeliner-nvim # Highlights unique characters for f/F and t/T motions | https://github.com/jinh0/eyeliner.nvim
     nvim-surround # https://github.com/kylechui/nvim-surround/
     nvim-treesitter-textobjects # https://github.com/nvim-treesitter/nvim-treesitter-textobjects/
     # broke for some reason ?
@@ -99,7 +91,7 @@ with final.pkgs.lib; let
     comment-nvim # https://github.com/numToStr/Comment.nvim
     nvim-autopairs # Automatically create matching pairs | https://github.com/windwp/nvim-autopairs
     nvim-ts-autotag # Automaticall close and rename html tags | https://github.com/windwp/nvim-ts-autotag
-    (mkNvimPlugin inputs.gx-nvim "gx.nvim") # open links with `gx` | https://github.com/chrishrb/gx.nvim
+    gx-nvim # open links with `gx` | https://github.com/chrishrb/gx.nvim/
 
     # Color Schemes
     tokyonight-nvim # https://github.com/folke/tokyonight.nvim/
@@ -115,13 +107,13 @@ with final.pkgs.lib; let
     mini-nvim # assorted tools | https://github.com/echasnovski/mini.nvim
     todo-comments-nvim # highlights 'TODO' comments | https://github.com/folke/todo-comments.nvim
     vim-sleuth # Detect tabstop and shiftwidth automatically | https://github.com/tpope/vim-sleuth
-    # ^ Useful utilities
 
     # General Dependencies
     sqlite-lua # https://github.com/kkharji/sqlite.lua/
     plenary-nvim # https://github.com/nvim-lua/plenary.nvim/
     nvim-web-devicons # https://github.com/nvim-tree/nvim-web-devicons/
     nvim-nio # https://github.com/nvim-neotest/nvim-nio/
+    nui-nvim # https://github.com/MunifTanjim/nui.nvim
 
     # Formatters
     conform-nvim # https://github.com/stevearc/conform.nvim/

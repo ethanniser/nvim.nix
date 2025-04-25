@@ -12,10 +12,6 @@
     #   url = "github:catgoose/telescope-helpgrep.nvim";
     #   flake = false;
     # };
-    gx-nvim = {
-      url = "github:/chrishrb/gx.nvim";
-      flake = false;
-    };
   };
 
   outputs = inputs @ {
