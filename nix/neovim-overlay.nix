@@ -35,7 +35,7 @@ with final.pkgs.lib; let
 
     # HOLDING ON
     # nvim-ts-context-commentstring # https://github.com/joosepalviste/nvim-ts-context-commentstring/
-    # nvim-ts-autotag # Automaticall close and rename html tags | https://github.com/windwp/nvim-ts-autotag
+    nvim-ts-autotag # Automaticall close and rename html tags | https://github.com/windwp/nvim-ts-autotag
 
     # Probably not needed
     # hardtime-nvim # Establish good habits | https://github.com/m4xshen/hardtime.nvim
