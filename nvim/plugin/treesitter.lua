@@ -6,3 +6,8 @@ require('nvim-treesitter.configs').setup {
   highlight = { enable = true },
   indent = { enable = true },
 }
+require('treesitter-context').setup {
+  enable = false,
+  max_lines = 1,
+  trim_scope = 'inner',
+}

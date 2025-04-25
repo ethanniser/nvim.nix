@@ -30,12 +30,8 @@ with final.pkgs.lib; let
     # https://search.nixos.org/packages?channel=unstable&from=0&size=50&sort=relevance&type=packages&query=vimPlugins
     # Can also add packages directly from flake inputs: `(mkNvimPlugin inputs.wf-nvim "wf.nvim")`
 
-    # Files
-    oil-nvim # https://github.com/stevearc/oil.nvim
-
     # HOLDING ON
     # nvim-ts-context-commentstring # https://github.com/joosepalviste/nvim-ts-context-commentstring/
-    nvim-ts-autotag # Automaticall close and rename html tags | https://github.com/windwp/nvim-ts-autotag
 
     # Probably not needed
     # hardtime-nvim # Establish good habits | https://github.com/m4xshen/hardtime.nvim
@@ -86,6 +82,10 @@ with final.pkgs.lib; let
     mini-nvim # collection | https://github.com/echasnovski/mini.nvim
     snacks-nvim # collection | https://github.com/folke/snacks.nvim
     nvim-highlight-colors # highlight hex and other color text | https://github.com/brenoprata10/nvim-highlight-colors
+    oil-nvim # https://github.com/stevearc/oil.nvim
+    nvim-ts-autotag # Automaticall close and rename html tags | https://github.com/windwp/nvim-ts-autotag
+    nvim-spectre # global find and replace | https://github.com/nvim-pack/nvim-spectre/
+    nvim-treesitter-textobjects # stuff for treesitter idek | https://github.com/nvim-treesitter/nvim-treesitter-textobjects/
   ];
 
   extraPackages = with pkgs; [];
