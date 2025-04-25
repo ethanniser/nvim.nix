@@ -1,0 +1,14 @@
+{
+  "name": "ethanniser-snippets",
+  "engines": {
+    "vscode": "^1.0.0"
+  },
+  "contributes": {
+    "snippets": [
+      {
+        "language": "typescript",
+        "path": "./effect.ts.json"
+      }
+    ]
+  }
+}

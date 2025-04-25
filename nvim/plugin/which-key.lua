@@ -1,11 +1,11 @@
-require('which-key').setup {
-  spec = {
-    { '<leader>c', group = '[C]ode' },
-    { '<leader>d', group = '[D]ocument' },
-    { '<leader>r', group = '[R]ename' },
-    { '<leader>s', group = '[S]earch' },
-    { '<leader>w', group = '[W]orkspace' },
-    { '<leader>h', group = '[H]arpoon' },
-    { '<leader>g', group = '[G]it' },
-  },
+local wk = require('which-key')
+
+wk.add {
+  { '<leader>f', group = 'Find' },
+  { '<leader>g', group = 'Git' },
+  { '<leader>s', group = 'Search' },
+  { 'g', group = 'Goto/LSP' },
+  { '<leader>u', group = 'Toggle' },
+  { '<leader>h', group = 'Harpoon' },
+  { '<leader>c', group = 'Code' },
 }
