@@ -85,6 +85,7 @@ with final.pkgs.lib; let
     diffview-nvim # view git diff on entire file | https://github.com/sindrets/diffview.nvim/
     mini-nvim # collection | https://github.com/echasnovski/mini.nvim
     snacks-nvim # collection | https://github.com/folke/snacks.nvim
+    nvim-highlight-colors # highlight hex and other color text | https://github.com/brenoprata10/nvim-highlight-colors
   ];
 
   extraPackages = with pkgs; [];
