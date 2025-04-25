@@ -1,4 +1,3 @@
-- get snippets working
 - figure out session management
 - "holding on" in nix file
 - linting?
