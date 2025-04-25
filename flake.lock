@@ -119,22 +119,6 @@
         "type": "github"
       }
     },
-    "gx-nvim": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1736242098,
-        "narHash": "sha256-S7GDbKvcmSfysahfq7yCw55R2LGriWM29yAX1mPn1LQ=",
-        "owner": "chrishrb",
-        "repo": "gx.nvim",
-        "rev": "c7e6a0ace694a098a5248d92a866c290bd2da1cc",
-        "type": "github"
-      },
-      "original": {
-        "owner": "chrishrb",
-        "repo": "gx.nvim",
-        "type": "github"
-      }
-    },
     "luvit-meta": {
       "flake": false,
       "locked": {
@@ -215,7 +199,6 @@
       "inputs": {
         "flake-utils": "flake-utils",
         "gen-luarc": "gen-luarc",
-        "gx-nvim": "gx-nvim",
         "nixpkgs": "nixpkgs_2"
       }
     },
