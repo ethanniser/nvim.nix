@@ -317,13 +317,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
       vim.keymap.set('n', keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
     end
 
-    -- Toggle diagnostics
-    map('<leader>ld', toggle_diagnostics, 'Toggle [D]iagnostics')
-
-    -- Rename the variable under your cursor
-    --  Most Language Servers support renaming across files, etc.
-    map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
-
     -- Execute a code action, usually your cursor needs to be on top of an error
     -- or a suggestion from your LSP for this to activate.
     map('<leader>ca', vim.lsp.buf.code_action, '[C]ode [A]ction')
@@ -333,7 +326,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
     map('K', vim.lsp.buf.hover, 'Hover Documentation')
 
     -- THE FOLLOWING ARE ALL SET IN SNACK FILE
+    -- -- Rename the variable under your cursor
+    -- --  Most Language Servers support renaming across files, etc.
+    -- map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
 
+    -- -- Toggle diagnostics
+    -- map('<leader>ld', toggle_diagnostics, 'Toggle [D]iagnostics')
+    --
     -- -- Jump to the type of the word under your cursor.
     -- --  Useful when you're not sure what type a variable is and you want to see
     -- --  the definition of its *type*, not where it was *defined*.
