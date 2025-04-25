@@ -32,7 +32,6 @@ with final.pkgs.lib; let
 
     # Files
     oil-nvim # https://github.com/stevearc/oil.nvim
-    neo-tree-nvim # https://github.com/nvim-neo-tree/neo-tree.nvim
 
     # HOLDING ON
     # nvim-ts-context-commentstring # https://github.com/joosepalviste/nvim-ts-context-commentstring/
