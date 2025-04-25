@@ -9,6 +9,9 @@ cmp.setup {
     end,
   },
   completion = { completeopt = 'menu,menuone,noinsert' },
+  formatting = {
+    format = require('nvim-highlight-colors').format,
+  },
 
   -- For an understanding of why these mappings were
   -- chosen, you will need to read `:help ins-completion`
@@ -17,6 +20,8 @@ cmp.setup {
   mapping = cmp.mapping.preset.insert {
     ['<Down>'] = cmp.mapping.select_next_item(),
     ['<Up>'] = cmp.mapping.select_prev_item(),
+    ['<C-u>'] = cmp.mapping.scroll_docs(-4), -- scroll up preview
+    ['<C-d>'] = cmp.mapping.scroll_docs(4), -- scroll down preview
 
     --  This will auto-import if your LSP supports it.
     --  This will expand snippets if the LSP sent a snippet.
@@ -25,7 +30,7 @@ cmp.setup {
     -- Manually trigger a completion from nvim-cmp.
     --  Generally you don't need this, because nvim-cmp will display
     --  completions whenever it has completion options available.
-    ['<C-Enter>'] = cmp.mapping.complete {},
+    ['<W-Esc>'] = cmp.mapping.complete {},
 
     -- Think of <c-n> as moving to the right of your snippet expansion.
     --  So if you have a snippet that's like:
@@ -47,9 +52,9 @@ cmp.setup {
     end, { 'i', 's' }),
   },
   sources = {
-    { name = 'nvim_lsp' },
-    { name = 'luasnip' },
-    { name = 'path' },
-    { name = 'buffer' },
+    { name = 'nvim_lsp', group_index = 1 }, -- lsp
+    { name = 'buffer', max_item_count = 5, group_index = 2 }, -- text within current buffer
+    { name = 'path', max_item_count = 3, group_index = 3 }, -- file system paths
+    { name = 'luasnip', max_item_count = 3, group_index = 5 }, -- snippets
   },
 }

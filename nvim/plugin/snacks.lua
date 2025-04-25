@@ -310,6 +310,42 @@ snacks.toggle
   :map('<leader>uc')
 snacks.toggle.treesitter():map('<leader>uT')
 snacks.toggle.option('background', { off = 'light', on = 'dark', name = 'Dark Background' }):map('<leader>ub')
-snacks.toggle.inlay_hints():map('<leader>uh')
+snacks.toggle.inlay_hints():map('<leader>uih')
 snacks.toggle.indent():map('<leader>ug')
 snacks.toggle.dim():map('<leader>uD')
+
+snacks
+  .toggle({
+    name = 'Treesitter Context',
+    get = function()
+      local tsc = require('treesitter-context')
+      return tsc.enabled
+    end,
+    set = function(state)
+      local tsc = require('treesitter-context')
+      if state then
+        tsc.enable()
+      else
+        tsc.disable()
+      end
+    end,
+  })
+  :map('<leader>ut', { desc = 'Toggle Treesitter Context' })
+
+snacks
+  .toggle({
+    name = 'Highlight Colors',
+    get = function()
+      local hc = require('nvim-highlight-colors')
+      return hc.is_active()
+    end,
+    set = function(state)
+      local hc = require('nvim-highlight-colors')
+      if state then
+        hc.turnOn()
+      else
+        hc.turnOff()
+      end
+    end,
+  })
+  :map('<leader>uh', { desc = 'Toggle Highlight Colors' })
