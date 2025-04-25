@@ -24,38 +24,18 @@ with final.pkgs.lib; let
   #   # or as an 'opt' plugin, that can be loaded with `:packadd!`
   #   optional = <true|false>; # Default: false
   #   ...
-  # }
+  #
   all-plugins = with pkgs.vimPlugins; [
     # plugins from nixpkgs go in here.
     # https://search.nixos.org/packages?channel=unstable&from=0&size=50&sort=relevance&type=packages&query=vimPlugins
     # Can also add packages directly from flake inputs: `(mkNvimPlugin inputs.wf-nvim "wf.nvim")`
 
-    # debugging
-
-    # Git
-
-    # telescope and extensions
-    telescope-nvim # https://github.com/nvim-telescope/telescope.nvim/
-    telescope-fzy-native-nvim # https://github.com/nvim-telescope/telescope-fzy-native.nvim
-    # (mkNvimPlugin inputs.telescope-helpgrep-nvim "telescope-helpgrep-nvim") # https://github.com/catgoose/telescope-helpgrep.nvim
-    telescope-zoxide # use zoxide with telescope | https://github.com/jvgrootveld/telescope-zoxide
-
-    # UI
-    nvim-notify # UI popup notifications | https://github.com/rcarriga/nvim-notify
-
     # Files
     oil-nvim # https://github.com/stevearc/oil.nvim
     neo-tree-nvim # https://github.com/nvim-neo-tree/neo-tree.nvim
-    fzf-vim # https://github.com/junegunn/fzf.vim
 
-    # navigation/editing enhancement plugins
-
-    nvim-surround # https://github.com/kylechui/nvim-surround/
-    # broke for some reason ?
-    # nvim-ts-context-commentstring # https://github.com/joosepalviste/nvim-ts-context-commentstring/
-
-    mini-nvim # assorted tools | https://github.com/echasnovski/mini.nvim
     # HOLDING ON
+    # nvim-ts-context-commentstring # https://github.com/joosepalviste/nvim-ts-context-commentstring/
     # nvim-ts-autotag # Automaticall close and rename html tags | https://github.com/windwp/nvim-ts-autotag
 
     # Probably not needed
@@ -99,12 +79,13 @@ with final.pkgs.lib; let
     nvim-dap-ui # https://github.com/rcarriga/nvim-dap-ui/
     gitsigns-nvim # Git line marking & blame | https://github.com/lewis6991/gitsigns.nvim/
     harpoon2 # File marking and quick navigation | https://github.com/ThePrimeagen/harpoon/tree/harpoon2
-    indent-blankline-nvim # indent "guides" | https://github.com/lukas-reineke/indent-blankline.nvim
     lualine-nvim # Status line | https://github.com/nvim-lualine/lualine.nvim/
     nvim-scrollbar # scroll bar with git/diagnostics | https://github.com/petertriho/nvim-scrollbar
     nvim-treesitter-context # context lines at top of screen | https://github.com/nvim-treesitter/nvim-treesitter-context/
     which-key-nvim # "context menu" at bottom of screen with available options | https://github.com/folke/which-key.nvim
     diffview-nvim # view git diff on entire file | https://github.com/sindrets/diffview.nvim/
+    mini-nvim # collection | https://github.com/echasnovski/mini.nvim
+    snacks-nvim # collection | https://github.com/folke/snacks.nvim
   ];
 
   extraPackages = with pkgs; [];
