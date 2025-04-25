@@ -1,4 +1,4 @@
-#This overlay, when applied to nixpkgs, adds the final neovim derivation to nixpkgs.
+# This overlay, when applied to nixpkgs, adds the final neovim derivation to nixpkgs.
 {inputs}: final: prev:
 with final.pkgs.lib; let
   pkgs = final;
@@ -30,12 +30,32 @@ with final.pkgs.lib; let
     # https://search.nixos.org/packages?channel=unstable&from=0&size=50&sort=relevance&type=packages&query=vimPlugins
     # Can also add packages directly from flake inputs: `(mkNvimPlugin inputs.wf-nvim "wf.nvim")`
 
+    # debugging
+
+    # Git
+
+    # telescope and extensions
+    telescope-nvim # https://github.com/nvim-telescope/telescope.nvim/
+    telescope-fzy-native-nvim # https://github.com/nvim-telescope/telescope-fzy-native.nvim
+    # (mkNvimPlugin inputs.telescope-helpgrep-nvim "telescope-helpgrep-nvim") # https://github.com/catgoose/telescope-helpgrep.nvim
+    telescope-zoxide # use zoxide with telescope | https://github.com/jvgrootveld/telescope-zoxide
+
+    # UI
+    nvim-notify # UI popup notifications | https://github.com/rcarriga/nvim-notify
+
     # Files
     oil-nvim # https://github.com/stevearc/oil.nvim
     neo-tree-nvim # https://github.com/nvim-neo-tree/neo-tree.nvim
+    fzf-vim # https://github.com/junegunn/fzf.vim
 
-    # HOLDING ON
+    # navigation/editing enhancement plugins
+
+    nvim-surround # https://github.com/kylechui/nvim-surround/
+    # broke for some reason ?
     # nvim-ts-context-commentstring # https://github.com/joosepalviste/nvim-ts-context-commentstring/
+
+    mini-nvim # assorted tools | https://github.com/echasnovski/mini.nvim
+    # HOLDING ON
     # nvim-ts-autotag # Automaticall close and rename html tags | https://github.com/windwp/nvim-ts-autotag
 
     # Probably not needed
@@ -85,8 +105,6 @@ with final.pkgs.lib; let
     nvim-treesitter-context # context lines at top of screen | https://github.com/nvim-treesitter/nvim-treesitter-context/
     which-key-nvim # "context menu" at bottom of screen with available options | https://github.com/folke/which-key.nvim
     diffview-nvim # view git diff on entire file | https://github.com/sindrets/diffview.nvim/
-    mini-nvim # collection | https://github.com/echasnovski/mini.nvim
-    snacks-nvim # collection | https://github.com/folke/snacks.nvim
   ];
 
   extraPackages = with pkgs; [];
