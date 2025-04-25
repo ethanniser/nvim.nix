@@ -61,7 +61,7 @@ vim.opt.shiftwidth = 2
 -- Maintain the indentation of the previous line when inserting a new line (duplicate of breakindent)
 vim.opt.breakindent = true
 -- Set the string to display at the beginning of a wrapped line when breakindent is used
-vim.opt.showbreak = '>>>>>'
+vim.opt.showbreak = '>>>>> '
 
 -- [[ Navigation and Interaction ]]
 

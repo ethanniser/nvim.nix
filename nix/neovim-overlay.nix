@@ -107,6 +107,7 @@ with final.pkgs.lib; let
     mini-nvim # assorted tools | https://github.com/echasnovski/mini.nvim
     todo-comments-nvim # highlights 'TODO' comments | https://github.com/folke/todo-comments.nvim
     vim-sleuth # Detect tabstop and shiftwidth automatically | https://github.com/tpope/vim-sleuth
+    (mkNvimPlugin inputs.stickybuf "stickybuf.nvim") # Locks a buffer to a window (for plugins with 'popup' buffers) | https://github.com/stevearc/stickybuf.nvim
 
     # General Dependencies
     sqlite-lua # https://github.com/kkharji/sqlite.lua/

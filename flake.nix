@@ -12,6 +12,10 @@
     #   url = "github:catgoose/telescope-helpgrep.nvim";
     #   flake = false;
     # };
+    stickybuf = {
+      url = "github:stevearc/stickybuf.nvim";
+      flake = false;
+    };
   };
 
   outputs = inputs @ {
