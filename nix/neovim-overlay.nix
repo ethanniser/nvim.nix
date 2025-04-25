@@ -85,7 +85,6 @@ with final.pkgs.lib; let
     oil-nvim # https://github.com/stevearc/oil.nvim
     nvim-ts-autotag # Automaticall close and rename html tags | https://github.com/windwp/nvim-ts-autotag
     nvim-spectre # global find and replace | https://github.com/nvim-pack/nvim-spectre/
-    nvim-treesitter-textobjects # stuff for treesitter idek | https://github.com/nvim-treesitter/nvim-treesitter-textobjects/
   ];
 
   extraPackages = with pkgs; [];
