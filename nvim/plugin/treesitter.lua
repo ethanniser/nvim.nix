@@ -7,9 +7,5 @@ if not vim.g.vscode then
     highlight = { enable = true },
     indent = { enable = true },
   }
-  require('treesitter-context').setup {
-    enable = false,
-    max_lines = 1,
-    trim_scope = 'inner',
-  }
+  require('treesitter-context').setup {}
 end
