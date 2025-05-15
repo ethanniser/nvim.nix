@@ -329,7 +329,7 @@ if not vim.g.vscode then
       -- THE FOLLOWING ARE ALL SET IN SNACK FILE
       -- -- Rename the variable under your cursor
       -- --  Most Language Servers support renaming across files, etc.
-      -- map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
+      map('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
 
       -- -- Toggle diagnostics
       -- map('<leader>ld', toggle_diagnostics, 'Toggle [D]iagnostics')
