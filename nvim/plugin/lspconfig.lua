@@ -43,7 +43,8 @@ if not vim.g.vscode then
   --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
   local servers = {
     -- Typescript
-    ts_ls = {},
+    -- ts_ls = {},
+    vtsls = {},
 
     -- Biome
     biome = {},

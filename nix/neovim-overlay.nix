@@ -111,6 +111,7 @@ with final.pkgs.lib; let
     rust-analyzer
     zls
     nodePackages.typescript-language-server
+    vtsls
     vscode-langservers-extracted
     biome
     astro-language-server
