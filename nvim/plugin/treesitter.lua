@@ -7,5 +7,7 @@ if not vim.g.vscode then
     highlight = { enable = true },
     indent = { enable = true },
   }
-  require('treesitter-context').setup {}
+  require('treesitter-context').setup {
+    max_lines = 10,
+  }
 end
