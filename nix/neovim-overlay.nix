@@ -30,9 +30,6 @@ with final.pkgs.lib; let
     # https://search.nixos.org/packages?channel=unstable&from=0&size=50&sort=relevance&type=packages&query=vimPlugins
     # Can also add packages directly from flake inputs: `(mkNvimPlugin inputs.wf-nvim "wf.nvim")`
 
-    # HOLDING ON
-    # nvim-ts-context-commentstring # https://github.com/joosepalviste/nvim-ts-context-commentstring/
-
     # Probably not needed
     # hardtime-nvim # Establish good habits | https://github.com/m4xshen/hardtime.nvim
     # catppuccin-nvim # https://github.com/catppuccin/nvim/
@@ -85,6 +82,7 @@ with final.pkgs.lib; let
     oil-nvim # https://github.com/stevearc/oil.nvim
     nvim-ts-autotag # Automaticall close and rename html tags | https://github.com/windwp/nvim-ts-autotag
     nvim-spectre # global find and replace | https://github.com/nvim-pack/nvim-spectre/
+    nvim-ts-context-commentstring # https://github.com/joosepalviste/nvim-ts-context-commentstring/
   ];
 
   extraPackages = with pkgs; [];
