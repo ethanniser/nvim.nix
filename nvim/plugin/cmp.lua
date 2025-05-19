@@ -31,7 +31,7 @@ if not vim.g.vscode then
       -- Manually trigger a completion from nvim-cmp.
       --  Generally you don't need this, because nvim-cmp will display
       --  completions whenever it has completion options available.
-      ['<W-Esc>'] = cmp.mapping.complete {},
+      ['<W-Esc>'] = cmp.mapping.complete {}, -- TODO: this doesnt work...
 
       -- Think of <c-n> as moving to the right of your snippet expansion.
       --  So if you have a snippet that's like:
