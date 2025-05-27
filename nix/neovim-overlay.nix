@@ -106,7 +106,7 @@ with final.pkgs.lib; let
     # Language Servers
     lua-language-server
     nil
-    rust-analyzer
+    # rust-analyzer
     zls
     nodePackages.typescript-language-server
     vtsls
