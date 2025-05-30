@@ -1,5 +1,20 @@
 local harpoon = require('harpoon')
-harpoon:setup {}
+harpoon:setup {
+  settings = {
+    key = function()
+      local cwd = vim.loop.cwd()
+      local branch = vim.fn.system('git branch --show-current 2>/dev/null'):gsub('\n', '')
+
+      -- If we're not in a git repo or command failed, just use cwd
+      if vim.v.shell_error ~= 0 or branch == '' then
+        return cwd
+      end
+
+      -- Combine cwd and branch for the key
+      return cwd .. ':' .. branch
+    end,
+  },
+}
 
 vim.keymap.set('n', '<leader>ha', function()
   harpoon:list():add()
