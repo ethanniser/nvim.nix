@@ -111,7 +111,7 @@ with final.pkgs.lib; let
     nodePackages.typescript-language-server
     vtsls
     vscode-langservers-extracted
-    biome
+    # biome
     astro-language-server
     pyright
     tailwindcss-language-server
