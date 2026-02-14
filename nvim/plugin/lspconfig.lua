@@ -1,23 +1,17 @@
 if not vim.g.vscode then
-  local lspconfig = require('lspconfig')
-
   vim.diagnostic.config { update_in_insert = false }
-
-  local util = require('lspconfig/util')
-
-  local path = util.path
 
   local function get_python_path(workspace)
     -- Use activated virtualenv.
     if vim.env.VIRTUAL_ENV then
-      return path.join(vim.env.VIRTUAL_ENV, 'bin', 'python')
+      return vim.fs.joinpath(vim.env.VIRTUAL_ENV, 'bin', 'python')
     end
 
     -- Find and use virtualenv in workspace directory.
     for _, pattern in ipairs { '*', '.*' } do
-      local match = vim.fn.glob(path.join(workspace, pattern, 'pyvenv.cfg'))
+      local match = vim.fn.glob(vim.fs.joinpath(workspace or '', pattern, 'pyvenv.cfg'))
       if match ~= '' then
-        return path.join(path.dirname(match), 'bin', 'python')
+        return vim.fs.joinpath(vim.fs.dirname(match), 'bin', 'python')
       end
     end
 
@@ -32,83 +26,52 @@ if not vim.g.vscode then
   local capabilities = vim.lsp.protocol.make_client_capabilities()
   capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
-  -- Enable the following language servers
-  --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
-  --
-  --  Add any additional override configuration in the following tables. Available keys are:
-  --  - cmd (table): Override the default command used to start the server
-  --  - filetypes (table): Override the default list of associated filetypes for the server
-  --  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
-  --  - settings (table): Override the default settings passed when initializing the server.
-  --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
-  local servers = {
-    -- Typescript
-    -- ts_ls = {},
-    vtsls = {},
+  -- Default configuration for all LSP servers (merged with nvim-lspconfig's lsp/*.lua configs)
+  vim.lsp.config('*', {
+    capabilities = capabilities,
+    root_markers = { '.git' },
+  })
 
-    -- Biome
-    biome = {},
+  -- Server-specific overrides (nvim-lspconfig provides base configs in lsp/ directory)
+  -- Only need to specify settings/overrides here, not cmd/filetypes/root_markers
 
-    -- Eslint
-    eslint = {},
-
-    -- Lua
-    lua_ls = {
-      settings = {
-        Lua = {
-          runtime = {
-            -- Tell the language server which version of Lua you're using
-            -- (most likely LuaJIT in the case of Neovim).
-            version = 'LuaJIT',
-          },
-          diagnostics = {
-            -- Get the language server to recognize the `vim` global.
-            globals = { 'vim' },
-          },
-          workspace = {
-            -- Make the server aware of Neovim runtime files
-            library = vim.api.nvim_get_runtime_file('', true),
-            -- Remove annoying popup when editing standalone lua files.
-            checkThirdParty = false,
-          },
-          telemetry = {
-            enable = true, -- That's fine.
-          },
-          format = {
-            enable = false,
-          },
+  -- Lua - custom settings for Neovim development
+  vim.lsp.config('lua_ls', {
+    settings = {
+      Lua = {
+        runtime = {
+          version = 'LuaJIT',
+        },
+        diagnostics = {
+          globals = { 'vim' },
+        },
+        workspace = {
+          library = vim.api.nvim_get_runtime_file('', true),
+          checkThirdParty = false,
+        },
+        telemetry = {
+          enable = true,
+        },
+        format = {
+          enable = false,
         },
       },
     },
+  })
 
-    -- Nix
-    nil_ls = {},
+  -- Python - custom pythonPath resolution
+  vim.lsp.config('pyright', {
+    before_init = function(_, config)
+      config.settings = config.settings or {}
+      config.settings.python = config.settings.python or {}
+      config.settings.python.pythonPath = get_python_path(config.root_dir)
+    end,
+  })
 
-    -- Rust
-    rust_analyzer = {},
-
-    -- Zig
-    zls = {},
-
-    -- Astro
-    astro = {},
-
-    -- Python
-    pyright = {
-      before_init = function(_, config)
-        config.settings.python.pythonPath = get_python_path(config.root_dir)
-      end,
-    },
-
-    -- Tailwind
-    tailwindcss = {},
-
-    -- C++
-    clangd = {},
-
-    -- Haskell
-    hls = {
-      settings = {
+  -- Haskell - extensive HLS settings
+  vim.lsp.config('hls', {
+    settings = {
+      haskell = {
         formattingProvider = 'fourmolu',
         maxCompletions = 40,
         plugin = {
@@ -261,21 +224,23 @@ if not vim.g.vscode then
         },
       },
     },
-  }
+  })
 
-  local function setup_server(server_name)
-    local server = servers[server_name] or {}
-    -- This handles overriding only values explicitly passed
-    -- by the server configuration above. Useful when disabling
-    -- certain features of an LSP (for example, turning off formatting for tsserver)
-    server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
-    lspconfig[server_name].setup(server)
-  end
-
-  -- Iterate over each server and setup
-  for server_name in pairs(servers) do
-    setup_server(server_name)
-  end
+  -- Enable all LSP servers (nvim-lspconfig provides configs in lsp/ directory)
+  vim.lsp.enable({
+    'vtsls',
+    'biome',
+    'eslint',
+    'lua_ls',
+    'nil_ls',
+    'rust_analyzer',
+    'zls',
+    'astro',
+    'pyright',
+    'tailwindcss',
+    'clangd',
+    'hls',
+  })
 
   -- Bind the `lsp_signature` to the LSP servers. This has to be called after the
   -- setup of LSPs.
