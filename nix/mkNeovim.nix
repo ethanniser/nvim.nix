@@ -44,7 +44,6 @@ with lib;
       # set to `true`, it is installed in the 'opt' packpath, and can be lazy loaded with
       # ':packadd! {plugin-name}
       optional = false;
-      runtime = {};
     };
 
     externalPackages = extraPackages ++ (optionals withSqlite [pkgs.sqlite]);
@@ -59,11 +58,10 @@ with lib;
       ))
     plugins;
 
-    # This nixpkgs util function creates an attrset
-    # that pkgs.wrapNeovimUnstable uses to configure the Neovim build.
-    neovimConfig = pkgs-wrapNeovim.neovimUtils.makeNeovimConfig {
+    neovimConfig = {
       inherit extraPython3Packages withPython3 withRuby withNodeJs viAlias vimAlias;
       plugins = normalizedPlugins;
+      wrapperArgs = [];
     };
 
     # This uses the ignoreConfigRegexes list to filter

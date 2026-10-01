@@ -108,7 +108,7 @@ with final.pkgs.lib; let
     nil
     # rust-analyzer
     zls
-    nodePackages.typescript-language-server
+    typescript-language-server
     vtsls
     vscode-langservers-extracted
     # biome
